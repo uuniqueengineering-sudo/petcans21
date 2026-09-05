@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PET Cans — Packaging Manufacturer</title>
+    <script>
+      // Single Page Application redirect handler for GitHub Pages
+      (function() {
+        var path = window.location.pathname;
+        var segments = path.split('/').filter(Boolean);
+        var last = segments[segments.length - 1];
+        var knownPages = ['about', 'products', 'catalogue', 'careers', 'contact', 'quote', 'admin'];
+
+        if (last && knownPages.indexOf(last.toLowerCase()) !== -1) {
+          segments.pop();
+          var basePath = segments.length > 0 ? '/' + segments.join('/') + '/' : '/';
+          window.location.replace(basePath + '#' + last);
+        } else {
+          var isGitHub = window.location.hostname.endsWith('github.io');
+          if (isGitHub && segments.length > 0) {
+            window.location.replace('/' + segments[0] + '/');
+          } else {
+            window.location.replace('/');
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #FAF6EE; color: #0F1E36;">
+    <div style="text-align: center; padding: 20px;">
+      <h2 style="margin-bottom: 8px; font-weight: 700;">Loading PET Cans...</h2>
+      <p style="color: #71695D; font-size: 14px;">Redirecting you to the requested page...</p>
+    </div>
+  </body>
+</html>
